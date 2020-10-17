@@ -1,38 +1,78 @@
-.App {
+#root {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: rgba(40, 44, 52, 0.8);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.category {
+  width: 18rem;
+  display: flex;
+  overflow: hidden;
+  background-color: rgba(40, 44, 52, 1);
+  margin: 3px;
+}
+
+.category img {
+  aspect-ratio: 1;
+  width: 100%;
+}
+.category a {
+  text-decoration: none;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category p {
+  position: relative;
+  display: none;
+  font-size: 1rem;
+  max-height: 6rem;
+  text-overflow: ellipsis;
+}
+
+.recipe {
+  background-color: rgba(40, 44, 52, 1);
+  margin: 3px;  
+  padding: 12px;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.topBar img {
+  max-width: 66%;
+  aspect-ratio: 1;
+}
+
+.ingredients p {
+  text-align: left;
+}
+
+
+
+.ingredients p {
+  margin: 2px;
+  font-size: 1.2rem;
+}
+
+.instructions li {
+  text-align: left;
+  margin-bottom: .5rem;
 }

@@ -29,21 +29,25 @@ const Meal = () => {
   }
   console.log(meals)
  return (
-   <div className="App">
+   <>
+   <h4>Recipes</h4>
+   <div className="categories">
      {meals.map(meal => {
      return (
        (
-        <Link to={`/Recipe/${meal.idMeal}`}  key={meal.idMeal}>
-        <div>
-          <h4>{meal.strMeal}</h4>
-          <img src={meal.strMealThumb} alt={meal.strMeal} />
-          <p>{meal.strMealDescription}</p>
+        
+        <div className="category">
+          <Link to={`/Recipe/${meal.idMeal}`}  key={meal.idMeal}>
+            <h4>{meal.strMeal}</h4>
+            <img src={meal.strMealThumb} alt={meal.strMeal} />
+            <p>{meal.strMealDescription}</p>
+          </Link>
         </div>
-      </Link>
        )
      )
    })}
   </div>
+  </>
  ) 
 }
 

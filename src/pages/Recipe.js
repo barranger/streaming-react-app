@@ -43,14 +43,23 @@ const Recipe = () => {
 
 
   return (
-    <div>
+    <div className="recipe">
       <h2>{meal.strMeal}</h2>
       <h4>{meal.strCategory} - {meal.strArea}</h4>
-      <h4>Ingredients</h4>
-      {ingredients.map(ing => <p>{ing.text}: {ing.measure}</p>)}
+      <div className="topBar">
+        <div className="ingredients">
+          <h4>Ingredients</h4>
+          {ingredients.map(ing => <p>{ing.text}: {ing.measure}</p>)}
+        </div>
+        <img src={meal.strMealThumb} alt={meal.strMeal} />
+      </div>
       <h4>Instructions</h4>
-      {meal.strInstructions.split('\n').map((line) => 
-        <p>{line}</p>)}
+      <div className="instructions">
+        <ol>
+      {meal.strInstructions.split('\n').filter(i => { return i.trim()}).map((line, index) => 
+        <li>{line}</li>)}
+        </ol>
+      </div>
       
     </div>
   )

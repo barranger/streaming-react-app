@@ -25,18 +25,25 @@ const Home = () => {
   console.log(categories);
 
   return (
-    <div className="App">
+    <>
+    <h2>Categories</h2>
+    <div className="categories">
         {categories.map( cat => { return (
-          <Link to={`/Category/${cat.strCategory}`}  key={cat.idCategory}>
-            <div>
+          
+          <div class="category">
+            <Link to={`/Category/${cat.strCategory}`}  key={cat.idCategory}>
+              <>
               <h4>{cat.strCategory}</h4>
               <img src={cat.strCategoryThumb} alt={cat.strCategory} />
               <p>{cat.strCategoryDescription}</p>
-            </div>
-          </Link>
+              </>
+            </Link>
+          </div>
+          
         );
         })}
     </div>
+    </>
   );
 };
 
