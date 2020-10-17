@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import '../App.css';
 
-const Category = () => {
+const Meal = () => {
   const {catId} = useParams();
   const [meals, setMeals] = useState();
 
@@ -11,8 +11,8 @@ const Category = () => {
       const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${catId}`;
       const response = await fetch(url);
       if(response.ok) {
-        const cats = await response.json();
-        setMeals(cats.meals);
+        const meals = await response.json();
+        setMeals(meals.meals);
       }
       else {
         console.warn('bad stuffs', response);
@@ -33,9 +33,13 @@ const Category = () => {
      {meals.map(meal => {
      return (
        (
-         <div key={meal.idMeal}>
+        <Link to={`/Recipe/${meal.idMeal}`}  key={meal.idMeal}>
+        <div>
           <h4>{meal.strMeal}</h4>
-         </div>
+          <img src={meal.strMealThumb} alt={meal.strMeal} />
+          <p>{meal.strMealDescription}</p>
+        </div>
+      </Link>
        )
      )
    })}
@@ -43,4 +47,4 @@ const Category = () => {
  ) 
 }
 
-export default Category;
+export default Meal;

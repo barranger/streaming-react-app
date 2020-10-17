@@ -1,6 +1,8 @@
 import React from 'react';
 import Home from './pages/Home';
 import Category from './pages/Category';
+import Recipe from './pages/Recipe';
+
 import {
   HashRouter as Router,
   Switch,
@@ -15,6 +17,9 @@ const App = () => {
     <Switch>
       <Route path="/category/:catId">
         <Category />
+      </Route>
+      <Route path="/recipe/:mealId">
+        <Recipe />
       </Route>
       <Route>
         <Home />
