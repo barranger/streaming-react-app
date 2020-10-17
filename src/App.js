@@ -11,7 +11,7 @@ import './App.css';
 const App = () => {
 
   return (
-  <Router basename="streaming-react-app">
+  <Router basename={`${process.env.PUBLIC_URL}/`}>
     <Switch>
       <Route path="/category/:catId">
         <Category />
