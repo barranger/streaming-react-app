@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [categories, setCategories] = useState();
@@ -26,13 +27,13 @@ const Home = () => {
   return (
     <div className="App">
         {categories.map( cat => { return (
-          <a href={`Category/${cat.strCategory}`}  key={cat.idCategory}>
+          <Link to={`/Category/${cat.strCategory}`}  key={cat.idCategory}>
             <div>
               <h4>{cat.strCategory}</h4>
               <img src={cat.strCategoryThumb} alt={cat.strCategory} />
               <p>{cat.strCategoryDescription}</p>
             </div>
-          </a>
+          </Link>
         );
         })}
     </div>
