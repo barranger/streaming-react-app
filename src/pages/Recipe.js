@@ -49,7 +49,7 @@ const Recipe = () => {
       <div className="topBar">
         <div className="ingredients">
           <h4>Ingredients</h4>
-          {ingredients.map(ing => <p>{ing.text}: {ing.measure}</p>)}
+          {ingredients.map(ing => <p>{ing.measure} {ing.text}</p>)}
         </div>
         <img src={meal.strMealThumb} alt={meal.strMeal} />
       </div>
