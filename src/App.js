@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './pages/Home';
 import Category from './pages/Category';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
